@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>さくら整骨院｜腰痛・肩こり専門｜沖縄市</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sage: #7a9e87;
+  --sage-light: #b4cebb;
+  --sage-pale: #eaf2ec;
+  --cream: #faf8f3;
+  --warm-white: #fffef9;
+  --teal: #4a8c8c;
+  --teal-light: #e0eeee;
+  --charcoal: #2c3030;
+  --mid: #5a6060;
+  --soft: #8a9090;
+  --gold: #c8a86b;
+  --serif: 'Noto Serif JP', serif;
+  --sans: 'Noto Sans JP', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--warm-white);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+/* ── HEADER ── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: rgba(250,248,243,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(122,158,135,0.15);
+  transition: padding .3s;
+}
+
+header.scrolled { padding: 10px 40px; }
+
+.logo {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--charcoal);
+  letter-spacing: .1em;
+}
+.logo span { color: var(--sage); }
+
+nav { display: flex; gap: 28px; align-items: center; }
+nav a {
+  font-size: 13px;
+  color: var(--mid);
+  text-decoration: none;
+  letter-spacing: .05em;
+  transition: color .2s;
+}
+nav a:hover { color: var(--sage); }
+
+.nav-cta {
+  background: var(--sage);
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-size: 13px !important;
+  transition: background .2s !important;
+}
+.nav-cta:hover { background: var(--teal) !important; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--charcoal);
+  transition: .3s;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 72px;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px 80px 80px;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--sage);
+  letter-spacing: .15em;
+  margin-bottom: 28px;
+}
+.hero-tag::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--sage);
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--charcoal);
+  margin-bottom: 24px;
+  letter-spacing: .05em;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--sage);
+  border-bottom: 2px solid var(--sage-light);
+}
+
+.hero-sub {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.9;
+  margin-bottom: 44px;
+  max-width: 420px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--sage);
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 15px;
+  text-decoration: none;
+  letter-spacing: .05em;
+  transition: background .25s, transform .15s;
+}
+.btn-primary:hover { background: var(--teal); transform: translateY(-2px); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid var(--sage);
+  color: var(--sage);
+  padding: 15px 28px;
+  border-radius: 50px;
+  font-size: 15px;
+  text-decoration: none;
+  letter-spacing: .05em;
+  transition: .25s;
+}
+.btn-secondary:hover { background: var(--sage-pale); }
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 52px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(122,158,135,0.2);
+}
+.stat-num {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1;
+}
+.stat-num span { font-size: 14px; color: var(--sage); }
+.stat-label { font-size: 11px; color: var(--soft); margin-top: 6px; letter-spacing: .05em; }
+
+.hero-right {
+  position: relative;
+  background: var(--sage-pale);
+  overflow: hidden;
+}
+
+.hero-visual {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-deco {
+  position: absolute;
+  border-radius: 50%;
+}
+.cd1 {
+  width: 380px; height: 380px;
+  background: rgba(122,158,135,0.12);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+}
+.cd2 {
+  width: 280px; height: 280px;
+  background: rgba(122,158,135,0.18);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+}
+.cd3 {
+  width: 180px; height: 180px;
+  background: rgba(122,158,135,0.22);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.hero-icon-center {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.hero-icon-center svg { width: 80px; height: 80px; }
+.hero-icon-center p {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--sage);
+  margin-top: 16px;
+  letter-spacing: .15em;
+}
+
+.floating-card {
+  position: absolute;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  animation: float 4s ease-in-out infinite;
+}
+.fc1 { top: 18%; right: 10%; animation-delay: 0s; }
+.fc2 { bottom: 22%; left: 8%; animation-delay: 2s; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.fc-label { font-size: 10px; color: var(--soft); letter-spacing: .08em; }
+.fc-val { font-size: 20px; font-weight: 500; color: var(--charcoal); margin-top: 4px; }
+.fc-sub { font-size: 11px; color: var(--sage); }
+
+/* ── PAIN SECTION ── */
+.pain {
+  padding: 100px 40px;
+  background: var(--cream);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-en {
+  font-size: 11px;
+  letter-spacing: .25em;
+  color: var(--sage);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.5vw, 34px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--charcoal);
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto 60px;
+}
+
+.pain-card {
+  background: #fff;
+  border: 1px solid rgba(122,158,135,0.18);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: transform .2s, box-shadow .2s;
+}
+.pain-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.07); }
+
+.pain-check {
+  width: 36px; height: 36px;
+  background: var(--sage-pale);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.pain-text { font-size: 14px; line-height: 1.7; color: var(--mid); }
+.pain-text strong { color: var(--charcoal); font-weight: 500; display: block; margin-bottom: 4px; }
+
+.pain-message {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--sage-pale), var(--teal-light));
+  border-radius: 24px;
+}
+.pain-message p {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--charcoal);
+  font-weight: 400;
+}
+.pain-message em { color: var(--sage); font-style: normal; font-weight: 500; }
+
+/* ── FEATURES ── */
+.features {
+  padding: 100px 40px;
+  background: var(--warm-white);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 40px 32px;
+  background: var(--cream);
+  border: 1px solid rgba(122,158,135,0.12);
+  transition: transform .25s;
+}
+.feature-card:hover { transform: translateY(-6px); }
+
+.feature-num {
+  font-family: var(--serif);
+  font-size: 64px;
+  font-weight: 300;
+  color: rgba(122,158,135,0.15);
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  line-height: 1;
+}
+
+.feature-icon {
+  width: 56px; height: 56px;
+  background: var(--sage-pale);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+
+.feature-card h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.feature-card p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--mid);
+}
+
+.feature-accent {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--sage);
+  border-bottom: 1px solid var(--sage-light);
+  padding-bottom: 2px;
+  letter-spacing: .05em;
+}
+
+/* ── FLOW ── */
+.flow {
+  padding: 100px 40px;
+  background: var(--sage-pale);
+}
+
+.flow-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.flow-steps::before {
+  content: '';
+  position: absolute;
+  top: 44px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1px;
+  background: var(--sage-light);
+}
+
+.flow-step {
+  text-align: center;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.flow-circle {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--sage-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 28px;
+  position: relative;
+}
+
+.flow-step-num {
+  position: absolute;
+  top: -6px; right: -6px;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: #fff;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.flow-step h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.flow-step p {
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+/* ── PRICE ── */
+.price {
+  padding: 100px 40px;
+  background: var(--warm-white);
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.price-card {
+  background: var(--cream);
+  border: 1px solid rgba(122,158,135,0.2);
+  border-radius: 20px;
+  padding: 32px 28px;
+  text-align: center;
+  transition: transform .2s;
+}
+.price-card:hover { transform: translateY(-4px); }
+.price-card.featured {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #fff;
+}
+
+.price-category {
+  font-size: 11px;
+  letter-spacing: .15em;
+  color: var(--soft);
+  margin-bottom: 8px;
+}
+.price-card.featured .price-category { color: rgba(255,255,255,.7); }
+
+.price-name {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+}
+.price-card.featured .price-name { color: #fff; }
+
+.price-amount {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1;
+}
+.price-amount span { font-size: 14px; color: var(--soft); }
+.price-card.featured .price-amount { color: #fff; }
+.price-card.featured .price-amount span { color: rgba(255,255,255,.7); }
+
+.price-note {
+  font-size: 12px;
+  color: var(--soft);
+  margin-top: 8px;
+}
+.price-card.featured .price-note { color: rgba(255,255,255,.7); }
+
+.price-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(122,158,135,0.3);
+  margin: 20px auto;
+}
+.price-card.featured .price-divider { background: rgba(255,255,255,.3); }
+
+.price-list {
+  list-style: none;
+  text-align: left;
+}
+.price-list li {
+  font-size: 13px;
+  color: var(--mid);
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.price-card.featured .price-list li { color: rgba(255,255,255,.9); }
+.price-list li::before { content: '✓'; color: var(--sage); font-size: 12px; }
+.price-card.featured .price-list li::before { color: rgba(255,255,255,.8); }
+
+/* ── TESTIMONIALS ── */
+.testimonials {
+  padding: 100px 40px;
+  background: var(--cream);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  position: relative;
+  border: 1px solid rgba(122,158,135,0.12);
+}
+
+.quote-mark {
+  font-family: var(--serif);
+  font-size: 60px;
+  color: var(--sage-light);
+  line-height: .8;
+  margin-bottom: 12px;
+}
+
+.testimonial-text {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--mid);
+  margin-bottom: 24px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--sage-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.author-info .name { font-size: 14px; font-weight: 500; color: var(--charcoal); }
+.author-info .meta { font-size: 11px; color: var(--soft); margin-top: 2px; }
+
+.stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; margin-bottom: 12px; }
+
+/* ── ACCESS ── */
+.access {
+  padding: 100px 40px;
+  background: var(--warm-white);
+}
+
+.access-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 960px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.access-info h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 28px;
+  color: var(--charcoal);
+}
+
+.access-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.access-table tr { border-bottom: 1px solid rgba(122,158,135,0.15); }
+.access-table th {
+  font-size: 12px;
+  color: var(--sage);
+  font-weight: 400;
+  letter-spacing: .05em;
+  padding: 12px 0;
+  text-align: left;
+  width: 80px;
+  vertical-align: top;
+}
+.access-table td {
+  font-size: 13px;
+  color: var(--mid);
+  padding: 12px 0;
+  line-height: 1.7;
+}
+
+.access-map {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--sage-pale);
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(122,158,135,0.2);
+}
+.map-placeholder { text-align: center; }
+.map-placeholder p { font-size: 13px; color: var(--mid); margin-top: 12px; }
+.map-icon { font-size: 48px; }
+
+/* ── CTA ── */
+.cta {
+  padding: 100px 40px;
+  background: var(--charcoal);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: rgba(122,158,135,0.08);
+  top: -200px; left: -100px;
+}
+.cta::after {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(122,158,135,0.06);
+  bottom: -150px; right: -50px;
+}
+
+.cta-content { position: relative; z-index: 1; }
+
+.cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  letter-spacing: .05em;
+}
+.cta h2 em { color: var(--sage-light); font-style: normal; }
+
+.cta p {
+  font-size: 15px;
+  color: rgba(255,255,255,.6);
+  margin-bottom: 48px;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: var(--charcoal);
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: .05em;
+  transition: .25s;
+}
+.btn-white:hover { background: var(--sage-light); }
+
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid rgba(255,255,255,.4);
+  color: #fff;
+  padding: 17px 36px;
+  border-radius: 50px;
+  font-size: 15px;
+  text-decoration: none;
+  letter-spacing: .05em;
+  transition: .25s;
+}
+.btn-outline-white:hover { background: rgba(255,255,255,.1); }
+
+.cta-note {
+  margin-top: 24px;
+  font-size: 12px;
+  color: rgba(255,255,255,.4);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #1e2424;
+  padding: 48px 40px 32px;
+  color: rgba(255,255,255,.5);
+}
+
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: rgba(255,255,255,.8);
+  margin-bottom: 12px;
+}
+.footer-logo span { color: var(--sage-light); }
+
+.footer-desc {
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 280px;
+}
+
+.footer-links h4 {
+  font-size: 12px;
+  color: rgba(255,255,255,.7);
+  letter-spacing: .1em;
+  margin-bottom: 16px;
+}
+.footer-links a {
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,.4);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--sage-light); }
+
+.footer-bottom {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s, transform .7s;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  header { padding: 14px 20px; }
+  nav { display: none; }
+  .hamburger { display: flex; }
+  nav.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--cream);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    padding: 0;
+  }
+  nav.open a { font-size: 18px; }
+
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 100px 24px 60px; }
+  .hero-right { min-height: 300px; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+
+  .features-grid { grid-template-columns: 1fr; }
+  .flow-steps { grid-template-columns: 1fr 1fr; }
+  .flow-steps::before { display: none; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .access-inner { grid-template-columns: 1fr; gap: 40px; }
+  .footer-inner { flex-direction: column; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+  .pain-grid { grid-template-columns: 1fr; }
+  .price-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="logo">さくら<span>整骨院</span></div>
+  <nav id="nav">
+    <a href="#pain">お悩み</a>
+    <a href="#features">当院の特徴</a>
+    <a href="#price">料金</a>
+    <a href="#access">アクセス</a>
+    <a href="#cta" class="nav-cta">無料相談・予約</a>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left reveal">
+    <div class="hero-tag">SAKURA SEIKOTSUIN</div>
+    <h1>
+      その<em>腰の痛み</em>、<br>
+      もう我慢しなくて<br>
+      いいんです。
+    </h1>
+    <p class="hero-sub">
+      忙しい毎日の中で、身体の不調を後回しにしていませんか。<br>
+      さくら整骨院では、根本から原因にアプローチし、<br>
+      あなたの「またあの頃の自分に戻りたい」を叶えます。
+    </p>
+    <div class="hero-btns">
+      <a href="#cta" class="btn-primary">🌸 無料相談・ご予約</a>
+      <a href="#features" class="btn-secondary">当院の特徴を見る</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">2,800<span>+</span></div>
+        <div class="stat-label">累計施術人数</div>
+      </div>
+      <div>
+        <div class="stat-num">92<span>%</span></div>
+        <div class="stat-label">リピート率</div>
+      </div>
+      <div>
+        <div class="stat-num">8<span>年</span></div>
+        <div class="stat-label">地域での実績</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="circle-deco cd1"></div>
+      <div class="circle-deco cd2"></div>
+      <div class="circle-deco cd3"></div>
+      <div class="hero-icon-center">
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="36" stroke="#7a9e87" stroke-width="1.5"/>
+          <path d="M40 20c-5.5 0-10 4.5-10 10 0 3.5 1.8 6.6 4.5 8.5L28 52h24l-6.5-13.5C48.2 36.6 50 33.5 50 30c0-5.5-4.5-10-10-10z" stroke="#7a9e87" stroke-width="1.5" fill="rgba(122,158,135,0.1)" stroke-linejoin="round"/>
+          <path d="M33 52l-2 8h18l-2-8" stroke="#7a9e87" stroke-width="1.5" stroke-linejoin="round"/>
+          <circle cx="40" cy="30" r="3" fill="#7a9e87" opacity=".5"/>
+        </svg>
+        <p>根本改善へ</p>
+      </div>
+    </div>
+    <div class="floating-card fc1">
+      <div class="fc-label">本日の空き状況</div>
+      <div class="fc-val">◎ 空あり</div>
+      <div class="fc-sub">当日予約OK</div>
+    </div>
+    <div class="floating-card fc2">
+      <div class="fc-label">口コミ評価</div>
+      <div class="fc-val">★ 4.9</div>
+      <div class="fc-sub">248件の口コミ</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain" id="pain">
+  <div class="section-header reveal">
+    <div class="section-en">YOUR CONCERN</div>
+    <h2 class="section-title">
+      こんなお悩みは<br>ありませんか？
+    </h2>
+  </div>
+  <div class="pain-grid">
+    <div class="pain-card reveal">
+      <div class="pain-check">😣</div>
+      <div class="pain-text">
+        <strong>朝起きたときの腰の痛み</strong>
+        起き上がるのが辛くて、一日の始まりが憂鬱…
+      </div>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-check">💻</div>
+      <div class="pain-text">
+        <strong>デスクワークによる肩こり</strong>
+        長時間のパソコン作業で肩が石のように固まっている
+      </div>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-check">🏃</div>
+      <div class="pain-text">
+        <strong>スポーツでの慢性的な痛み</strong>
+        以前の怪我が完治せず、思いきり動けない日々
+      </div>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-check">😴</div>
+      <div class="pain-text">
+        <strong>痛みで眠れない夜</strong>
+        体が痛くて熟睡できず、翌日も疲れが取れない
+      </div>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-check">💊</div>
+      <div class="pain-text">
+        <strong>薬に頼り続けている</strong>
+        痛み止めは飲んでいるが、根本的に治っていない気がする
+      </div>
+    </div>
+    <div class="pain-card reveal">
+      <div class="pain-check">😰</div>
+      <div class="pain-text">
+        <strong>再発を繰り返している</strong>
+        治ったと思ったらまた痛み出す…のくり返し
+      </div>
+    </div>
+  </div>
+  <div class="pain-message reveal">
+    <p>
+      そのお悩み、<em>一人で抱え込まないでください。</em><br>
+      さくら整骨院では、症状の原因を丁寧に分析し、<br>
+      あなただけの施術プランをご提案します。
+    </p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="section-header reveal">
+    <div class="section-en">OUR APPROACH</div>
+    <h2 class="section-title">さくら整骨院が<br>選ばれる3つの理由</h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <div class="feature-num">01</div>
+      <div class="feature-icon">🔍</div>
+      <h3>根本原因にアプローチする「検査重視」の施術</h3>
+      <p>痛みのある場所だけを施術するのではなく、姿勢・骨格・筋肉バランスを丁寧に検査。なぜ痛みが出ているのかを明確にしてから施術を行います。</p>
+      <span class="feature-accent">初回30分の検査込み</span>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-num">02</div>
+      <div class="feature-icon">🌿</div>
+      <h3>身体に優しい「痛くない」施術で安心</h3>
+      <p>強い力で押したり揉んだりする施術は行いません。産後ケアから高齢の方まで対応できる、負担の少ない優しいアプローチを採用しています。</p>
+      <span class="feature-accent">痛くない整体</span>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-num">03</div>
+      <div class="feature-icon">📋</div>
+      <h3>再発させないための「セルフケア指導」</h3>
+      <p>施術だけでなく、ご自宅でできるストレッチや日常生活の改善点もお伝えします。通院を終えた後も、痛みのない生活を続けられるようサポート。</p>
+      <span class="feature-accent">毎回の生活習慣アドバイス</span>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow">
+  <div class="section-header reveal">
+    <div class="section-en">FLOW</div>
+    <h2 class="section-title">ご来院からの流れ</h2>
+  </div>
+  <div class="flow-steps">
+    <div class="flow-step reveal">
+      <div class="flow-circle">
+        📞
+        <div class="flow-step-num">1</div>
+      </div>
+      <h4>ご予約</h4>
+      <p>お電話またはLINEで簡単に予約できます。当日予約もOK。</p>
+    </div>
+    <div class="flow-step reveal">
+      <div class="flow-circle">
+        📝
+        <div class="flow-step-num">2</div>
+      </div>
+      <h4>問診・検査</h4>
+      <p>症状・生活習慣を丁寧にヒアリング。姿勢・骨格を検査します。</p>
+    </div>
+    <div class="flow-step reveal">
+      <div class="flow-circle">
+        ✋
+        <div class="flow-step-num">3</div>
+      </div>
+      <h4>施術</h4>
+      <p>お身体の状態に合わせた施術を行います（約40〜60分）。</p>
+    </div>
+    <div class="flow-step reveal">
+      <div class="flow-circle">
+        🌱
+        <div class="flow-step-num">4</div>
+      </div>
+      <h4>アフターケア</h4>
+      <p>施術後のセルフケア・次回プランをご説明します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="price" id="price">
+  <div class="section-header reveal">
+    <div class="section-en">PRICE</div>
+    <h2 class="section-title">料金案内</h2>
+  </div>
+  <div class="price-grid">
+    <div class="price-card reveal">
+      <div class="price-category">FIRST VISIT</div>
+      <div class="price-name">初回体験コース</div>
+      <div class="price-amount">3,980<span>円（税込）</span></div>
+      <div class="price-note">通常8,800円 → 初回限定</div>
+      <div class="price-divider"></div>
+      <ul class="price-list">
+        <li>問診・姿勢検査（30分）</li>
+        <li>全身施術（40分）</li>
+        <li>セルフケア指導</li>
+        <li>施術プランのご提案</li>
+      </ul>
+    </div>
+    <div class="price-card featured reveal">
+      <div class="price-category">STANDARD</div>
+      <div class="price-name">通常施術コース</div>
+      <div class="price-amount">8,800<span>円（税込）</span></div>
+      <div class="price-note">60分　月4回コース 30,000円</div>
+      <div class="price-divider"></div>
+      <ul class="price-list">
+        <li>問診・状態確認</li>
+        <li>全身施術（50分）</li>
+        <li>電気・温熱療法</li>
+        <li>アフターケア指導</li>
+      </ul>
+    </div>
+    <div class="price-card reveal">
+      <div class="price-category">PLUS</div>
+      <div class="price-name">集中改善コース</div>
+      <div class="price-amount">12,800<span>円（税込）</span></div>
+      <div class="price-note">90分　徹底ケアプラン</div>
+      <div class="price-divider"></div>
+      <ul class="price-list">
+        <li>詳細検査・カウンセリング</li>
+        <li>深部施術（70分）</li>
+        <li>ストレッチ指導</li>
+        <li>自宅ケアマニュアル</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-header reveal">
+    <div class="section-en">VOICE</div>
+    <h2 class="section-title">患者様の声</h2>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">10年以上悩んでいた腰痛が、通い始めてわずか2ヶ月で改善しました。先生が毎回丁寧に原因を説明してくれるので、安心して通えています。</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">👩</div>
+        <div class="author-info">
+          <div class="name">T.Mさん（42歳・女性）</div>
+          <div class="meta">腰痛・通院4ヶ月</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">産後の骨盤矯正でお世話になりました。育児中でも通いやすいよう、スケジュール調整に協力していただいて本当に助かりました。体が楽になりました！</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">👩</div>
+        <div class="author-info">
+          <div class="name">S.Kさん（34歳・女性）</div>
+          <div class="meta">産後骨盤矯正・通院2ヶ月</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">ゴルフの打ちすぎで肘と肩を痛めて来院。スポーツ整体に詳しい先生に適切な施術と練習量の見直し方も教えていただき、大会に復帰できました。</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">👨</div>
+        <div class="author-info">
+          <div class="name">K.Nさん（56歳・男性）</div>
+          <div class="meta">スポーツ障害・通院3ヶ月</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section class="access" id="access">
+  <div class="section-header reveal">
+    <div class="section-en">ACCESS</div>
+    <h2 class="section-title">アクセス・診療時間</h2>
+  </div>
+  <div class="access-inner">
+    <div class="access-info reveal">
+      <h3>さくら整骨院</h3>
+      <table class="access-table">
+        <tr>
+          <th>住所</th>
+          <td>〒904-0000<br>沖縄県沖縄市○○○ 1-2-3</td>
+        </tr>
+        <tr>
+          <th>電話</th>
+          <td>098-000-0000</td>
+        </tr>
+        <tr>
+          <th>診療時間</th>
+          <td>平日 9:00〜12:30 / 15:00〜19:30<br>土曜 9:00〜13:00<br>日・祝 休診</td>
+        </tr>
+        <tr>
+          <th>アクセス</th>
+          <td>○○バス停から徒歩3分<br>駐車場：5台あり（無料）</td>
+        </tr>
+      </table>
+    </div>
+    <div class="access-map reveal">
+      <div class="map-placeholder">
+        <div class="map-icon">📍</div>
+        <p>沖縄市○○町 1-2-3<br><small style="color:var(--soft)">Googleマップを埋め込む</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="cta-content reveal">
+    <h2>
+      まずは、<em>お気軽にご相談</em>ください。<br>
+      初回は特別価格でご体験いただけます。
+    </h2>
+    <p>予約はお電話・LINEで受付中。当日予約もOKです。</p>
+    <div class="cta-btns">
+      <a href="tel:098-000-0000" class="btn-white">📞 098-000-0000</a>
+      <a href="#" class="btn-outline-white">💬 LINEで予約する</a>
+    </div>
+    <p class="cta-note">初回体験コース 3,980円（通常8,800円）／ 無理な勧誘は一切行いません</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">さくら<span>整骨院</span></div>
+      <p class="footer-desc">腰痛・肩こり・スポーツ障害など、身体の不調を根本からケアする整骨院です。沖縄市で8年、地域の皆様の健康を支えています。</p>
+    </div>
+    <div class="footer-links">
+      <h4>メニュー</h4>
+      <a href="#pain">お悩みから探す</a>
+      <a href="#features">当院の特徴</a>
+      <a href="#price">料金案内</a>
+      <a href="#access">アクセス</a>
+      <a href="#cta">ご予約・お問い合わせ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 さくら整骨院. All Rights Reserved.</span>
+    <span>このサイトはデモ用に作成されたサンプルです</span>
+  </div>
+</footer>
+
+<script>
+// Header scroll
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
+nav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => nav.classList.remove('open'));
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, 80 * i);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
